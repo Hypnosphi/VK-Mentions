@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "VK mentions",
+  "version": "1.1.1",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.vk.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": ["inject.js"],
+  "externally_connectable": {
+    "matches": ["*://*.vk.com/*"]
+  },
+  "permissions": ["*://*.vk.com/*"],
+  "background": {
+    "persistent": false,
+    "scripts": ["parser.js"]
+  }
+}
