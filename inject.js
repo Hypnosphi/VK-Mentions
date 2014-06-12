@@ -1,11 +1,11 @@
-//var extId = 'eclcnenlmadahojlpddeojhnfkdgcjck';
-var extId = 'ckdhlldfibgcpcnpmbcbgoakbcmjhaim';
+var mention_extId = 'eclcnenlmadahojlpddeojhnfkdgcjck';
+//var extId = 'ckdhlldfibgcpcnpmbcbgoakbcmjhaim';
 ajax.__post = ajax.post;
 ajax.post = function (url, query, options) {
   if (url == 'al_im.php' || url == 'al_mail.php') {
     var message = query.msg || query.message;
     if (message) {
-      chrome.runtime.sendMessage(extId, message,
+      chrome.runtime.sendMessage(mention_extId, message,
         function(response) {
           query.msg = query.message = response;
           ajax.__post(url, query, options);
@@ -97,20 +97,3 @@ function addWdd(el) {
     });
   }
 }
-
-/*function setSelectionStart(el) {
-  var sel =  window.getSelection();
-  var cont = sel.baseNode;
-  var selectionStart = sel.baseOffset;
-  console.log(selectionStart);
-  var node = el.firstChild;
-  if (node && node != cont) {
-    var prevHTML = document.createElement('div');
-    do {
-      prevHTML.appendChild(node.cloneNode());
-      node = node.nextSibling;
-    } while(node && node != cont && node != node.parentNode);
-    selectionStart += prevHTML.innerHTML.length;
-  }
-    el.selectionStart = selectionStart;
-}*/
