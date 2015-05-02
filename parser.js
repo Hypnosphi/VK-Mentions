@@ -5,10 +5,10 @@ chrome.runtime.onMessageExternal.addListener(
 
 parseMentions = function(text) {
   //reformat from (@|*)id (Name) to [id|Name]
-  fastMention = /[\*@]([\w.]+)\s*(?:\(([^\)]*)\))*/g;
+  fastMention = /[\*@]([\w.]+)(?:\s*\(([^\)]*)\))*/g;
   rfText = text.replace(fastMention,'[$1|$2]');
   //find all mentions
-  mention = /\[(?:(id|club)(\d+)|([\w.]+))\|([^\]]*)\]/;
+  mention = /\[(?:(id|club)(\d+)|([\w.]+))\|([^\]]*)\]/g;
   console.log('ololo')
   return rfText.replace(mention,
     function (match, type, id, domain, name){
