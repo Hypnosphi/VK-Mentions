@@ -1,5 +1,5 @@
-var mention_extId = 'eclcnenlmadahojlpddeojhnfkdgcjck';
-//var mention_extId = 'feoidlchmngjbnomknnhmlobdgidgjek',
+//var mention_extId = 'eclcnenlmadahojlpddeojhnfkdgcjck';
+var mention_extId = 'feoidlchmngjbnomknnhmlobdgidgjek',
     count = 0;
     imClasses = ['im_editable', /*'fc_editable',*/ 'pad_msg_field'],
     imId = 'mail_box_editable';
